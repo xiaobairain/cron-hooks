@@ -1,0 +1,50 @@
+---
+name: WeCron
+route: /we-cron
+menu: 组件
+---
+
+import { Playground, Props } from 'docz';
+import { useState } from 'react';
+import CronHooks, { InputCron } from './index';
+
+## WeCron
+
+> 组件名称：WeCron
+> 引入方式： import { CronHooks, InputCron } from '@welab/antd-components';;
+
+## 代码演示
+
+<CronHooks onChange={val => console.log('CronHooks--', val)} />
+
+## InputCron
+
+## 代码演示
+
+
+
+<Playground>
+  {() => {
+    const [inputValue, setInputValue] = useState('0 0 1,2,3 ? * MON#1');
+
+    return (
+      <div>
+        <InputCron value={inputValue} onChange={val => setInputValue(val)} />
+      </div>
+    )
+  }}
+</Playground>
+
+
+
+
+## API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|type|默认定义的表达式类型|Array|['second', 'minute', 'hour', 'day', 'month', 'week']|
+|value|给定的表达式|String|0 0 0 \* \* ?|
+|style|外部包裹的样式|Object?|{}|
+|onChange|监听事件， 可用form托管|Function?|() => {}|
+
+

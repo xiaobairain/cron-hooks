@@ -1,0 +1,44 @@
+{
+  "name": "cron-hooks",
+  "version": "1.0.0",
+  "description": "cron-hooks 定时表达式",
+  "keywords": [
+    "cron-hooks",
+    "cron",
+    "react-cron",
+    "timed tasks"
+  ],
+  "homepage": "",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "authors": {
+    "name": "xiaobyrain",
+    "email": "dreamlin0712@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaobairain/cron-hooks.git"
+  },
+  "scripts": {
+    "dev": "father doc dev",
+    "build": "father build",
+    "deploy": "father doc build && father doc deploy"
+  },
+  "peerDependencies": {
+    "antd": "4.x",
+    "react": "16.x",
+    "babel-plugin-import": "^1.13.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "father": "^2.29.8"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "antd": "4",
+    "babel-plugin-import": "^1.13.0",
+    "react": "16"
+  }
+}
