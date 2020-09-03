@@ -4,10 +4,10 @@
  * @Author: Bean
  * @Date: 2020-08-27 16:04:32
  * @LastEditors: Bean
- * @LastEditTime: 2020-08-31 17:04:21
+ * @LastEditTime: 2020-09-03 14:33:07
  */
-import React, { useState} from 'react';
-import { Radio, InputNumber, Row, Checkbox, Select, Divider, Alert } from 'antd';
+import React from 'react';
+import { Radio, InputNumber, Row, Checkbox, Select } from 'antd';
 import defaultData, { localeMap } from './BASICDATA';
 import './components.less';
 
@@ -17,7 +17,7 @@ const { Option } = Select;
 
 const CronPane = props => {
   const { value = '0', type = 'second', options = [], onChange, createChecks } = props;
-  const [errMessage, setErrMessage] = useState('');
+
   const defaultSecond = defaultData[type];
   const defaultInputData = {
     cycles: ['1', '1'],
@@ -56,10 +56,6 @@ const CronPane = props => {
     defaultInputData.checks = value.split(',');
   }
 
-  const checkRange = () => {
-    setErrMessage('数据范围有误，请校对!');
-  };
-
   // radio更改，赋给默认的second对应数据，以重新渲染选中的radio
   const onRadioChange = e => {
     const secondRadio = e.target.value;
@@ -93,7 +89,6 @@ const CronPane = props => {
 
   return (
     <>
-      {errMessage ? <Alert message={errMessage} banner /> : null}
       <RadioGroup name="radiogroup" value={radiochecked} onChange={onRadioChange}>
         <Radio style={radioStyle} value="1">
           {/* localeMap[type]  秒/分/时/日/月 */}
@@ -128,7 +123,7 @@ const CronPane = props => {
                   ))}
                 </Select>
               </span>
-              <Divider type="vertical" className='divider' />
+              <span className='divider' />
               <span
                 onClick={e => {
                   e.stopPropagation();
@@ -221,7 +216,7 @@ const CronPane = props => {
                 onChange={val => inputChange(val, 'cycles', 0, '-')}
                 style={{ width: 100 }}
               />
-              <Divider type="vertical" className='divider' />
+              <span className='divider' />
               <InputNumber
                 disabled={radiochecked !== '2'}
                 min={0}

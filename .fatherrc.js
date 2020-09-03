@@ -3,7 +3,7 @@
  * @Author: Bean
  * @Date: 2020-09-01 09:36:59
  * @LastEditors: Bean
- * @LastEditTime: 2020-09-02 17:09:05
+ * @LastEditTime: 2020-09-03 14:10:18
  */
 export default {
   entry: '/src/index',

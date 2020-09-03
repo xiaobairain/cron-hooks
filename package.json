@@ -35,10 +35,5 @@
   },
   "files": [
     "dist"
-  ],
-  "devDependencies": {
-    "antd": "4",
-    "babel-plugin-import": "^1.13.0",
-    "react": "16"
-  }
+  ]
 }
